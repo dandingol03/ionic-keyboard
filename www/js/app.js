@@ -37,9 +37,33 @@ angular.module('app', ['ionic', 'ui.router','ngCordova'])
       url:'/login',
       controller: 'loginController',
       templateUrl:'views/login/login.html'
-    });
+    })
+
+
+  /**
+   * 我的订单
+   */
+    .state('orderCluster',{
+      url:'/orderCluster',
+      controller:'orderClusterController',
+      templateUrl:'views/orderCluster/orderCluster.html'
+    })
+
+    /**
+     * 车辆信息绑定
+     */
+     .state('car_info',{
+       url:'/car_info',
+       controller: 'carInfoController',
+       templateUrl:'views/car_info/car_info.html'
+     });
+
+
+
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/orderCluster');
 
 });
+
+
