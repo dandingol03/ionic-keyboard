@@ -282,4 +282,121 @@ angular.module('app')
       '违章查询'
     ];
 
+
+    //车驾管服务
+
+    //选择车驾管服务项目
+    $scope.services=["代办车辆年审","代办行驶证年审","接送机","取送车","违章查询"];
+    $scope.service="车辆年审";
+
+    $scope.service_select=function(services) {
+      if (services !== undefined && services !== null &&services.length > 0)
+      {
+        var buttons=[];
+        services.map(function(service,i) {
+          buttons.push({text: service});
+        });
+        $ionicActionSheet.show({
+          buttons:buttons,
+          titleText: '选择你的保额',
+          cancelText: 'Cancel',
+          buttonClicked: function(index) {
+            $scope.service = services[index];
+            return true;
+          },
+          cssClass:'motor_insurance_actionsheet'
+        });
+      }
+      else
+      {}
+    }
+
+    $scope.actionSheet_show = function() {
+
+      // Show the action sheet
+      var hideSheet = $ionicActionSheet.show({
+        buttons: [
+          { text: '<b>Share</b> This' },
+          { text: '<b>Share</b> This' },
+          { text: '<b>Share</b> This' },
+          { text: '<b>Share</b> This' },
+          { text: '<b>Share</b> This' },
+          { text: '<b>Share</b> This' },
+          { text: '<b>Share</b> This' },
+          { text: '<b>Share</b> This' },
+          { text: '<b>Share</b> This' },
+          { text: '<b>Share</b> This' },
+          { text: 'Move' }
+        ],
+        titleText: 'select your favourite project ',
+        cancelText: 'Cancel',
+        cancel: function() {
+          // add cancel code..
+        },
+        buttonClicked: function(index) {
+          return true;
+        },
+        cssClass:'center'
+      });
+    };
+
+
+    $scope.addresses=['tow1','tow2','tow3'];
+    $scope.address=$scope.addresses[0];
+    $scope.addresses_select=function(addresses) {
+      if (addresses !== undefined && addresses !== null &&addresses.length > 0)
+      {
+        var buttons=[];
+        addresses.map(function(address,i) {
+          buttons.push({text: address});
+        });
+        var address=$scope.address;
+        $ionicActionSheet.show({
+          buttons:buttons,
+          titleText: '选择你的保额',
+          cancelText: 'Cancel',
+          buttonClicked: function(index) {
+            $scope.address = $scope.addresses[index];
+            return true;
+          },
+          cssClass:'motor_insurance_actionsheet'
+        });
+      }
+      else
+      {}
+    }
+
+
+
+    $scope.service_persons=['person1','person2','person3'];
+    $scope.service_person=$scope.service_persons[0];
+    $scope.service_person_select=function(persones) {
+      if (persones !== undefined && persones !== null &&persones.length > 0)
+      {
+        var buttons=[];
+        persones.map(function(person,i) {
+          buttons.push({text: person});
+        });
+
+        $ionicActionSheet.show({
+          buttons:buttons,
+          titleText: '选择你的服务人员',
+          cancelText: 'Cancel',
+          buttonClicked: function(index) {
+            $scope.service_person = $scope.service_persons[index];
+            return true;
+          },
+          cssClass:'motor_insurance_actionsheet'
+        });
+      }
+      else
+      {}
+    }
+
+    $scope.makePhone=function () {
+
+    }
+
+
+
   });
