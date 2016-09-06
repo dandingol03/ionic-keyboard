@@ -1,4 +1,18 @@
 {
-  "name": "ionic-keyboard",
-  "app_id": ""
+  "name": "ionic-secure",
+  "app_id": "com.ionicframework.starter",
+   "proxies": [
+          {
+            "path":"/login",
+            "proxyUrl":"http://localhost:9030/login"
+          },
+          {
+           	"path": "/svr/request",
+           	"proxyUrl": "http://localhost:9030/svr/request"
+           	},
+           	{
+           	 "path": "/proxy/node",
+           	 "proxyUrl": "http://localhost:9030/"
+           	}
+        ]
 }
