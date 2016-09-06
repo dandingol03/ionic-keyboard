@@ -177,7 +177,7 @@ angular.module('app')
     //寿险列表获取
     $http({
       method:"get",
-      url:"/proxy/node/insurance/get_lifeinsurance_list"
+      url:"/proxy/insurance/insurance/get_lifeinsurance_list"
     }).success(function(response){
       var life_insurances=response.life_insurances;
       if(Object.prototype.toString.call(life_insurances)!='[object Array]')
@@ -188,7 +188,7 @@ angular.module('app')
       //get 车险险种列表
       $http({
         method:"get",
-        url:"/proxy/node/insurance/project_provide"
+        url:"/proxy/insurance/insurance/project_provide"
       }).success(function(response){
         var projects=response.projects;
         if(Object.prototype.toString.call(projects)!='[object Array]')
