@@ -14,6 +14,10 @@
            	{
            	 "path": "/proxy/node",
            	 "proxyUrl": "http://localhost:9030/"
+           	},
+           	{
+           	 "path": "/proxy/insurance",
+             "proxyUrl": "http://202.194.14.106:9030/"
            	}
         ]
 }

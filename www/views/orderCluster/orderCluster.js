@@ -1,14 +1,20 @@
+<<<<<<< HEAD
 /**
  * Created by yiming on 16/9/6.
  */
 angular.module('app')
   .controller('orderClusterController',function($scope,$state,$http, $location,$rootScope,$ionicModal){
+=======
+angular.module('app')
+  .controller('orderClusterController',function($scope,$state,$http, $location,$rootScope,$ionicModal,ionicDatePicker){
+>>>>>>> 98ae12c6e76d0ecf6e1297eab66255e447c5c059
 
     //TODO:add selecte item css highlight
 
     $scope.tabs=[
       {name:'待支付订单',activated:false,orders:
         [
+<<<<<<< HEAD
           {
             type:'车险',schemes:[
             {name:'brazil',coverage:300,fee:500,spectum:2},
@@ -27,6 +33,26 @@ angular.module('app')
             {name:'addition2',fee:800}]
           }
         ]},
+=======
+        {
+          type:'车险',schemes:[
+          {name:'brazil',coverage:300,fee:500,spectum:2},
+          {name:'honda',coverage:300,fee:500,spectum:1},
+          {name:'R1',coverage:300,fee:500,spectum:1},]
+        },
+        {
+          // {name:'新华保险',coverage:1205,fee:3000,'缴费期间':'3年','保额期间':'3年','首年保费':400000},
+          type:'寿险',main:{name:'新华保险',coverage:1205,fee:3000,'缴费期间':'3年','保额期间':'3年','首年保费':400000},additions:[
+          {name:'addition1',fee:300},
+          {name:'addition2',fee:800}]
+        },
+        {
+          type:'寿险',main:{name:'india洋',coverage:300,fee:200},additions:[
+          {name:'addition1',fee:300},
+          {name:'addition2',fee:800}]
+        }
+      ]},
+>>>>>>> 98ae12c6e76d0ecf6e1297eab66255e447c5c059
       {name:'已完成订单',activated:false,orders:[]},
       {name:'估价中订单',activated:false,orders:[]}
     ];
@@ -61,12 +87,21 @@ angular.module('app')
             }
 
           }
+<<<<<<< HEAD
           break;
         case '寿险':
 
           break;
         default:
           break;
+=======
+              break;
+        case '寿险':
+
+              break;
+        default:
+              break;
+>>>>>>> 98ae12c6e76d0ecf6e1297eab66255e447c5c059
       }
     }
 
@@ -102,7 +137,11 @@ angular.module('app')
 
     $scope.buy=function(){
       //最终购买,即支付时,要区分寿险和车险,并更改订单状态为已完成:finished
+<<<<<<< HEAD
     };
+=======
+      };
+>>>>>>> 98ae12c6e76d0ecf6e1297eab66255e447c5c059
 
 
 
