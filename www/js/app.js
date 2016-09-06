@@ -108,21 +108,27 @@ angular.module('app', ['ionic', 'ui.router','ngCordova','ionic-datepicker'])
         templateUrl:'views/login/login.html'
       });
 
+      $stateProvider.state('orderCluster',{
+        url:'/orderCluster',
+        controller:'orderClusterController',
+        templateUrl:'views/orderCluster/orderCluster.html'
+      });
+
       $stateProvider.state('tabs',{
         url:'/tabs',
         abstract:true,
         templateUrl:'views/tabs/tabs.html'
       });
 
-      //$stateProvider.state('tabs.dashboard',{
-      //  url:'/dashboard',
-      //  views:{
-      //    'dashboard-tab':{
-      //      controller:'dashboardController',
-      //      templateUrl:'views/dashboard/dashboard.html'
-      //    }
-      //  }
-      //});
+      $stateProvider.state('tabs.my',{
+        url:'/my',
+        views:{
+          'my-tab':{
+            controller:'myController',
+            templateUrl:'views/my/my.html'
+          }
+        }
+      });
 
     $stateProvider.state('tabs.dashboard',{
       url:'/dashboard',
@@ -139,6 +145,16 @@ angular.module('app', ['ionic', 'ui.router','ngCordova','ionic-datepicker'])
     //  controller:'dashboardController',
     //  templateUrl:'views/dashboard/dashboard.html'
     //});
+
+    /**
+     *
+     * 车险险种列表
+     */
+    $stateProvider.state('motor_insurance',{
+      url:'/motor_insurance/:insurances',
+      controller:'motorInsuranceController',
+      templateUrl:'views/motor_insurance/motor_insurance.html'
+    });
 
 
 

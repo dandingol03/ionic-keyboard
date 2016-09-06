@@ -70,10 +70,14 @@ angular.module('app')
       $scope.coverage_modal = modal;
     });
 
-    $scope.open_lifeModal= function(){
-      cordova.plugins.Keyboard.show();
-      //$scope.coverage_modal.show();
-    };
+    //待定
+    if(window.cordova!==undefined&&window.cordova!==null)
+    {
+      $scope.open_lifeModal= function(){
+        cordova.plugins.Keyboard.show();
+        //$scope.coverage_modal.show();
+      };
+    }
 
     $scope.close_lifeModal= function() {
       $scope.coverage_modal.hide();
@@ -269,5 +273,13 @@ angular.module('app')
       $state.go('car_insurance');
     }
 
+    $scope.service='代办车辆年审';
+    $scope.services=[
+      '代办车辆年审',
+      '代办驾驶证年审',
+      '取送车',
+      '接送机',
+      '违章查询'
+    ];
 
   });

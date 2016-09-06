@@ -217,7 +217,15 @@
 
       <!-- 车驾管 -->
       <div ng-if="tabIndex==3" class='home-tab'>
+        <label class="item item-select" style="border-width: 0px;height:50px;padding-left:16px;padding-right: 0px;">
+          <select ng-change="fee_change()"
+                  style="max-width:100%;padding-left:0px;right:auto;"
+                  ng-model="service"
+                  ng-options="service for service in services">
+          </select>
+        </label>
         <ion-list>
+
           <ion-item ng-repeat="service in tabs[tabIndex].services"
                     class="item item-icon-right"
                     href="{{service.href}}"
